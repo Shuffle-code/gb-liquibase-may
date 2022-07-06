@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
+
+
+
+    <changeSet id="before_create_confirmation_code_table" author="evgeniy">
+        <tagDatabase tag="before_confirmation_code_table"/>
+    </changeSet>
+
+    <changeSet id="create_confirmation_code_table" author="evgeniy">
+        <createTable tableName="CONFIRMATION_CODE">
+            <column name="ID" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="USER_ID" type="BIGSERIAL">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="confirmation_code" baseColumnNames="USER_ID" constraintName="FK_ACCOUNT_USER"
+                                 referencedTableName="ACCOUNT_USER" referencedColumnNames="ID"/>
+    </changeSet>
+
+<!--    CONSTRAINT ACCOUNT_USER_FOREIGN_KEY FOREIGN KEY (USER_ID) REFERENCES ACCOUNT_USER (ID)-->
+
+    <!---->
+
+
+</databaseChangeLog>
