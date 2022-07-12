@@ -29,7 +29,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="ORDER_ID" type="BIGINT">
-                <constraints unique="true"/>
+                <constraints unique="false"/>
             </column>
         </createTable>
 

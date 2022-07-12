@@ -23,7 +23,7 @@
 
 
 <!--    <include file="lesson9/create.code.tables.xml" relativeToChangelogFile="true"/>-->
-    <include file="lesson10/create.address.table.xml" relativeToChangelogFile="true"/>
-    <include file="lesson10/create.order.table.xml" relativeToChangelogFile="true"/>
+<!--    <include file="lesson10/create.address.table.xml" relativeToChangelogFile="true"/>-->
+<!--    <include file="lesson10/create.order.table.xml" relativeToChangelogFile="true"/>-->
     <include file="lesson10/create.order_item.table.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
