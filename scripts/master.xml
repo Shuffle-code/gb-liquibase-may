@@ -8,8 +8,8 @@
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
 
 <!--    <include file="lesson1/create.product.table.xml" relativeToChangelogFile="true"/>-->
-<!--    <include file="lesson1/create.manufacturer.table.xml" relativeToChangelogFile="true"/>-->
-<!--    <include file="lesson1/product.add.column.manufacturer.id.xml" relativeToChangelogFile="true"/>-->
+<!--&lt;!&ndash;    <include file="lesson1/create.manufacturer.table.xml" relativeToChangelogFile="true"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <include file="lesson1/product.add.column.manufacturer.id.xml" relativeToChangelogFile="true"/>&ndash;&gt;-->
 <!--    <include file="lesson1/create.category.table.xml" relativeToChangelogFile="true"/>-->
 <!--    <include file="lesson1/create.product_category.table.xml" relativeToChangelogFile="true"/>-->
 
@@ -25,5 +25,11 @@
 <!--    <include file="lesson9/create.code.tables.xml" relativeToChangelogFile="true"/>-->
 <!--    <include file="lesson10/create.address.table.xml" relativeToChangelogFile="true"/>-->
 <!--    <include file="lesson10/create.order.table.xml" relativeToChangelogFile="true"/>-->
-    <include file="lesson10/create.order_item.table.xml" relativeToChangelogFile="true"/>
+<!--    <include file="lesson10/create.order_item.table.xml" relativeToChangelogFile="true"/>-->
+<!--    <include file="lesson11/create.product_image.table.xml" relativeToChangelogFile="true"/>-->
+<!--    <include file="w_tt/create.players.table.xml" relativeToChangelogFile="true"/>-->
+<!--    <include file="w_tt/create.tournaments.table.xml" relativeToChangelogFile="true"/>-->
+<!--    <include file="w_tt/create.players_tournaments.table.xml" relativeToChangelogFile="true"/>-->
+<!--    <include file="w_tt/tournaments.add.fk.xml" relativeToChangelogFile="true"/>-->
+<!--    <include file="nsk_tt/create.user.role.auth.tables.xml" relativeToChangelogFile="true"/>-->
 </databaseChangeLog>

@@ -7,39 +7,33 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
 
-    <changeSet id="before_create_players_table" author="shuffle">
-        <tagDatabase tag="before_create_players_table"/>
+    <changeSet id="before_create_tournaments_table" author="shuffle">
+        <tagDatabase tag="before_create_tournaments_table"/>
     </changeSet>
 
-    <changeSet id="create_players_table" author="shuffle">
-        <createTable tableName="PLAYERS">
+    <changeSet id="create_tournaments_table" author="shuffle">
+        <createTable tableName="TOURNAMENTS">
             <column name="id" type="BIGSERIAL">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="firstname" type="VARCHAR(255)">
+            <column name="title" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="patronymic" type="VARCHAR(255)">
+            <column name="date" type="DATE">
                 <constraints nullable="false"/>
             </column>
-            <column name="lastname" type="VARCHAR(255)">
-                <constraints nullable="true"/>
-            </column>
-            <column name="rating" type="DECIMAL(10, 2))">
-                <constraints nullable="false" unique="false"/>
-            </column>
-            <column name="rating_ttw" type="DECIMAL(10, 2))">
-                <constraints nullable="false" unique="false"/>
-            </column>
-            <column name="year_of_birth" type="DATE">
+            <column name="winner_id" type="BIGSERIAL">
                 <constraints nullable="false"/>
             </column>
-<!--            <column name="MANUFACTURE_DATE" type="DATE">-->
-<!--                <constraints nullable="false"/>-->
-<!--            </column>-->
-<!--            <column name="VERSION" type="INT" defaultValue="0">-->
-<!--                <constraints nullable="false"/>-->
-<!--            </column>-->
+            <column name="address_id" type="BIGSERIAL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount_players" type="BIGSERIAL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VERSION" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
             <column name="CREATED_BY" type="VARCHAR(255)"/>
             <column name="CREATED_DATE" type="TIMESTAMP"/>
             <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
@@ -47,7 +41,9 @@
             <column name="STATUS" type="VARCHAR(30)" defaultValue="ACTIVE">
                 <constraints nullable="false"/>
             </column>
+
         </createTable>
+
     </changeSet>
 
 </databaseChangeLog>

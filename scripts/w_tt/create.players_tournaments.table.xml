@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
+
+    <changeSet id="before_create_players_tournaments_table" author="shuffle">
+        <tagDatabase tag="before_create_players_tournaments_table"/>
+    </changeSet>
+
+    <changeSet id="create_table.PLAYERS_TOURNAMENTS" author="shuffle" context="postgresql" labels="players_tournaments_table">
+        <createTable tableName="PLAYERS_TOURNAMENTS">
+            <column name="PLAYERS_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TOURNAMENTS_id" type="BIGINT">
+                <constraints unique="true"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="PLAYERS_TOURNAMENTS" columnNames="PLAYERS_id, TOURNAMENTS_id"/>
+        <addForeignKeyConstraint baseTableName="PLAYERS_TOURNAMENTS" baseColumnNames="PLAYERS_id" constraintName="FK_PLAYERS_TOURNAMENTS_PLAYERS"
+                                 referencedTableName="PLAYERS" referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="PLAYERS_TOURNAMENTS" baseColumnNames="TOURNAMENTS_id" constraintName="FK_PLAYERS_TOURNAMENTS_TOURNAMENTS"
+                                 referencedTableName="TOURNAMENTS" referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

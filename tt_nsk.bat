@@ -1,0 +1,1 @@
+liquibase.bat --classpath=scripts --logLevel debug --defaultsFile=tt_nsk.properties %*

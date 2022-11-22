@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
+
+    <changeSet id="before_TOURNAMENT_add_FK" author="shuffle">
+        <tagDatabase tag="before_TOURNAMENT_add_FK"/>
+    </changeSet>
+
+    <changeSet id="TOURNAMENT_add_FK" author="shuffle">
+        <addForeignKeyConstraint baseTableName="TOURNAMENT" baseColumnNames="address_id" constraintName="FK_TOURNAMENT_ADDRESS"
+                                 referencedTableName="ADDRESS" referencedColumnNames="id"/>
+<!--        <addForeignKeyConstraint baseTableName="TOURNAMENTS" baseColumnNames="ADDRESS_ID" constraintName="FK_TOURNAMENTS_ADDRESS"-->
+<!--                                 referencedTableName="ADDRESS" referencedColumnNames="ID"/>-->
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
+
+    <changeSet id="before_create_table.tour_image" author="shuffle">
+        <tagDatabase tag="before_create_tour_image_table"/>
+    </changeSet>
+
+    <changeSet id="create_table.tour_image" author="shuffle" >
+        <createTable tableName="tour_image">
+            <column name="ID" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="path" type="varchar(512)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tour_id" type="BIGINT"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="tour_image" baseColumnNames="TOUR_ID" constraintName="FK_TOUR_IMAGE_TOURNAMENT"
+                                 referencedTableName="TOURNAMENT" referencedColumnNames="ID"/>
+
+    </changeSet>
+</databaseChangeLog>
