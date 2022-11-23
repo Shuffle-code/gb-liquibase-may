@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet id="before_create_seance_table" author="shuffle">
+        <tagDatabase tag="before_create_seance_table"/>
+    </changeSet>
+    <changeSet id="create_seance_table" author="shuffle">
+        <createTable tableName="SEANCE">
+            <column name ="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="TIME_START" type="TIME">
+            </column>
+            <column name="FILM_ID" type="BIGINT">
+            </column>
+            <column name="AMOUNT_TICKETS" type="BIGINT">
+            </column>
+            <column name="PRICE_ID" type="BIGINT">
+            </column>
+            <column name="DATE" type="DATE">
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="SEANCE" baseColumnNames="FILM_ID" constraintName="FK_SEANCE_FILM"
+                                 referencedTableName="FILM" referencedColumnNames="ID"/>
+<!--        <addForeignKeyConstraint baseTableName="SEANCE" baseColumnNames="TICKET_ID" constraintName="FK_SEANCE_TICKET"-->
+<!--                                 referencedTableName="TICKET" referencedColumnNames="ID"/>-->
+        <addForeignKeyConstraint baseTableName="SEANCE" baseColumnNames="PRICE_ID" constraintName="FK_SEANCE_PRICE"
+                                 referencedTableName="PRICE" referencedColumnNames="ID"/>
+    </changeSet>
+</databaseChangeLog>
+
+
+<!--        ./interview.bat update-->
+
+        <!--    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">-->
+<!--        xmlns:pro="http://www.liquibase.org/xml/ns/pro"-->

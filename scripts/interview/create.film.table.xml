@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet id="before_create_film_table" author="shuffle">
+        <tagDatabase tag="before_create_film_table"/>
+    </changeSet>
+    <changeSet id="create_film_table" author="shuffle">
+        <createTable tableName="FILM">
+            <column name ="ID" type="BIGINT" autoIncrement="true" >
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="TITLE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LASTING_ID" type="BIGINT">
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="FILM" baseColumnNames="LASTING_ID" constraintName="FK_FILM_LASTING"
+                                 referencedTableName="LASTING" referencedColumnNames="ID"/>
+    </changeSet>
+</databaseChangeLog>
+
+
+<!--        ./interview.bat update-->
+
+        <!--    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">-->
+<!--        xmlns:pro="http://www.liquibase.org/xml/ns/pro"-->
